@@ -18,3 +18,9 @@ O candidato irá realizar um pair programming com algum desenvolvedor do time, p
 Existe uma lista de tarefas a serem cumpridas nesse projeto, desde resolução de bugs até implementação de features novas, então durante a entrevista, algumas dessas tarefas serão escolhidas para serem resolvidas.
 
 > Candidato, fique a vontade para se familiarizar com o código e dar sugestões/críticas, o intuito aqui é conhecer o trabalho de cada um :)
+
+## Informações sobre o projeto
+
+- O projeto faz uso da API do [Rick and Morty](https://rickandmortyapi.com/), que contém informações sobre os personagens, planetas e episódios
+- O projeto tem apenas duas telas desenvolvidas: lista geral de personagens e detalhe de um personagem da lista
+- A parte que realiza as chamadas na API já estão prontas e mapeadas, usando uma implementação da lib [dio](https://pub.dev/packages/dio), e estão sendo injetadas através da lib [GetIt](https://pub.dev/packages/get_it)
