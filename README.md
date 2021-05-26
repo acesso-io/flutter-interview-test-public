@@ -1,13 +1,14 @@
 # Teste para entrevista Flutter
 
-Esse repositório é um base para ser usado durante a entrevista de um candidato mobile flutter
+Esse repositório é um base para ser usado durante a entrevista de um candidato mobile Flutter. Leia o passa a passo abaixo para preparar o seu ambiente para a entrevista e boa sorte!
 
 ## Passo a passo
 
-1. Caso ainda não tenha o ambiente do Flutter instalado, siga a [documentação oficial](https://flutter.dev/docs/get-started/install) para o instalar
+1. Caso ainda não tenha o ambiente do Flutter instalado, siga a [documentação oficial](https://flutter.dev/docs/get-started/install) para o instalar.
+    - A versão instalada deve ser no mínimo: `2.2.0` do Flutter e `2.13.0` do Dart
 2. Clone este repositório: `git clone https://github.com/acesso-io/flutter-interview-test-public.git`
-3. Verifique se está conseguindo rodar o projeto normalmente de umas das maneiras a seguir
-    - Usando o run da sua IDE/Editor de código preferido
+3. Verifique se está conseguindo rodar o projeto normalmente, de umas das maneiras a seguir
+    - Usando o `Run` da sua IDE/Editor de código preferido
     - Pelo terminal, com o comando `flutter run`
 
 ## Dinâmica
