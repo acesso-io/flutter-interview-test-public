@@ -5,6 +5,8 @@ import 'package:flutter_interview_test/domain/entities/character.dart';
 import 'package:flutter_interview_test/domain/entities/episode.dart';
 import 'package:flutter_interview_test/domain/entities/location.dart';
 import 'package:flutter_interview_test/domain/repositories/rick_and_morty_repository.dart';
+import 'package:flutter_interview_test/domain/services/favorite_character_service.dart';
+import 'package:flutter_interview_test/domain/services/favorite_character_service_impl.dart';
 import 'package:flutter_interview_test/infra/drivers/http_driver.dart';
 import 'package:get_it/get_it.dart';
 
@@ -18,5 +20,7 @@ class InjectionModule {
         RickAndMortyRepositoryImpl(Location.fromJson, Endpoints.location));
     di.registerFactory<RickAndMortyRepository<Episode>>(
         () => RickAndMortyRepositoryImpl(Episode.fromJson, Endpoints.episode));
+    di.registerFactory<FavoriteCharacterService>(
+        () => FavoriteCharacterServiceImpl());
   }
 }
