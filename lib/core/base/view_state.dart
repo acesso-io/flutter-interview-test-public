@@ -1,4 +1,6 @@
 abstract class ViewState {
+  bool get isLoadMore => this is LoadMoreState;
+
   bool get isBusy => this is BusyState;
 
   bool get isIdle => this is IdleState;
@@ -7,6 +9,8 @@ abstract class ViewState {
 }
 
 class BusyState extends ViewState {}
+
+class LoadMoreState extends ViewState {}
 
 class IdleState extends ViewState {
   final bool _hasError;

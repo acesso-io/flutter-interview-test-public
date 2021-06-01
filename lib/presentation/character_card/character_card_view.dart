@@ -50,7 +50,12 @@ class CharacterCardView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
-                      Text(character.name ?? '', style: Styles.title),
+                      Text(
+                        character.name ?? '',
+                        style: Styles.title,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                       StatusWidget(status: character.status),
                       SectionWidget(
                         hint: 'Species:',
