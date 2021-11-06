@@ -5,7 +5,8 @@ import 'colors.dart';
 class Themes {
   static ThemeData appTheme(BuildContext context) => ThemeData(
         primarySwatch: AppColors.primaryColor,
-        accentColor: AppColors.accentColor,
+        colorScheme: ColorScheme.fromSwatch(accentColor: AppColors.accentColor)
+            .copyWith(secondary: Colors.amber),
         backgroundColor: AppColors.primaryColor,
         brightness: Brightness.light,
         textTheme: Theme.of(context).textTheme,

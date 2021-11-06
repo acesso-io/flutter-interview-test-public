@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_interview_test/core/resources/colors.dart';
 import 'package:flutter_interview_test/core/resources/styles.dart';
 import 'package:flutter_interview_test/domain/entities/character.dart';
+import 'package:flutter_interview_test/presentation/base/favorite_widget.dart';
 import 'package:flutter_interview_test/presentation/base/section_widget.dart';
 import 'package:flutter_interview_test/presentation/base/status_widget.dart';
 import 'package:flutter_interview_test/presentation/character_details/character_details_view.dart';
 
 class CharacterCardView extends StatelessWidget {
   final double _height = 150.0;
+  final bool isFavorite;
   final Character character;
 
   const CharacterCardView({
     Key? key,
     required this.character,
+    required this.isFavorite,
   }) : super(key: key);
 
   @override
@@ -60,6 +63,10 @@ class CharacterCardView extends StatelessWidget {
                       SectionWidget(
                         hint: 'Species:',
                         label: character.species ?? '',
+                        extra: FavoriteWidget(
+                          isFavorite: isFavorite,
+                          character: character,
+                        ),
                       ),
                     ],
                   ),
