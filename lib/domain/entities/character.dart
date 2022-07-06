@@ -13,6 +13,7 @@ class Character {
   List<String>? episodesUrl;
   String? characterUrl;
   DateTime? created;
+  bool? favorite;
 
   Character({
     this.id,
@@ -27,6 +28,7 @@ class Character {
     this.episodesUrl,
     this.characterUrl,
     this.created,
+    this.favorite
   });
 
   static Character fromJson(dynamic json) => Character(
@@ -45,6 +47,7 @@ class Character {
         episodesUrl: json['episode']?.cast<String>(),
         characterUrl: json['url'],
         created: DateTime.tryParse(json['created']),
+        favorite: json['favorite'] != null ? true : false
       );
 }
 

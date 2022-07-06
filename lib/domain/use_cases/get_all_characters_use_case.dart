@@ -9,12 +9,15 @@ class GetAllCharacters implements UseCase<PagedResult<Character>> {
   final CharacterRepository repository;
   final int page;
 
-  GetAllCharacters({
-    this.repository = const CharacterRepositoryImpl(),
+  factory GetAllCharacters.injected() {
+    return GetAllCharacters(CharacterRepositoryImpl.injected());
+  }
+
+  GetAllCharacters(
+    this.repository, {
     this.page = 1,
   });
 
   @override
-  Future<ApiResponse<PagedResult<Character>>> run() async =>
-      repository.getAll(page);
+  Future<ApiResponse<PagedResult<Character>>> run() => repository.getAll(page);
 }

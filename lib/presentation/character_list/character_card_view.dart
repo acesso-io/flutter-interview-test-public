@@ -9,10 +9,12 @@ import 'package:flutter_interview_test/presentation/character_details/character_
 class CharacterCardView extends StatelessWidget {
   final double _height = 150.0;
   final Character character;
+  final void Function() onFavoriteClicked;
 
   const CharacterCardView({
     Key? key,
     required this.character,
+    required this.onFavoriteClicked
   }) : super(key: key);
 
   @override
@@ -50,12 +52,22 @@ class CharacterCardView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
-                      Text(
-                        character.name ?? '',
-                        style: Styles.title,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      Row(children: [
+                        Text(
+                          character.name ?? '',
+                          style: Styles.title,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        IconButton(
+                            onPressed: () => onFavoriteClicked(),
+                            icon: Icon(
+                              character.favorite == true
+                                  ? Icons.favorite
+                                  : Icons.favorite_border_outlined,
+                              color: Colors.red,
+                            ))
+                      ]),
                       StatusWidget(status: character.status),
                       SectionWidget(
                         hint: 'Species:',
